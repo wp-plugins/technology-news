@@ -83,6 +83,7 @@ function parse_feed() {
     $background_color = get_option("background_color");
     $forground_color = get_option("foreground_color");
     $api_key = get_option("api_key");
+	$rel = get_option("open_page");
 	
 	if(empty($no_of_headlines))
 	{
@@ -92,11 +93,15 @@ function parse_feed() {
 	{
 		$widget_title = "Technology News";
 	}
+	if(empty($rel))
+	{
+		$rel = "_self";
+	}
 
     $truncatetitlechar = 0;
     $truncatedescchar = 200;
     $truncatedescstring = "";
-    $rel = get_option("open_page");
+    
     $displaydescriptions = false;
     $target = " target= ";
 
